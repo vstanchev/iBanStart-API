@@ -431,6 +431,28 @@ When an amount of documentToUpload is specified as part of a JSON body, it is en
     "documentType": "invoice"
 }
 ```
+#### <a id="documentToDownload_object"></a> Document To Download Object ####
+
+When an amount of Document To Download is specified as part of a JSON body, it is encoded as an object with the following fields:
+
+**Object resources:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| name | string(255) | The name of the document to download. |
+| mimeType | String (60) | The MIME-type of the document to download. |
+| url | String (255) | The URL to download the document. Note that this URL is unique, and cannot be called twice. If you fail the download the first time, you must recall this request to generate new URLs. |
+
+**Example:**
+
+```json
+{
+	"name": "1506588313_certificateDeposit.pdf",
+	"mimeType": "application/pdf",
+	"url": "http://api.ibanfirst.com/tl/52da48e3726d78cb983ca0f56dee1fca"
+}
+```
+
 #### <a id="status_list"></a> Status List ####
 
 Here is the list of status you may encounter while using the iBanFirst API.
