@@ -1,5 +1,25 @@
 # iBanStart API Documentation
 
+## BEFORE YOU START ##
+
+### API Reference ###
+
+The iBanFirst API is organized around REST. Our API is designed to have predictable, resource-oriented URLs and use the HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which can be understood by off-the-shelf HTTP clients, and we support cross-origin resource sharing to allow you to interact securely with our API from a client-side web application. JSON will be returned in all responses from the API, including errors.
+
+### Authentication ###
+
+#### Quick ####
+
+As our API is designed to be secured, we highly recommend you to consult our [Authentication page](./services/Auth.md) before to start integration in order to get your application working properly with our services.
+
+#### Time ####
+
+As a part of the authentication process is based on time, your systems should be synchronised through [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) to ensure the capability of reaching our services. Our API engine has a tolerance of 2 seconds gap to ensure that all systems are capable to reach the API, whever the Time Server you uses. Using our API with non-synchronized system will result in various errors in response to your query. 
+
+#### Testing and troubleshooting ####
+
+For testing requests and have a clear representation of what's returned by our API, you may want visit our [testing page](./services/Testing.md) and use the script provided. Easy to use, it will help you integrate the API more efficiently. 
+
 ## GETTING STARTED WITH IBANSTART API ##
 
 3 easy steps to get your company up!

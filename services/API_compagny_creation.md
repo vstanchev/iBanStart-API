@@ -8,15 +8,17 @@
 | [GET /Companies/{comapnyId}/CertificateOfDeposit/](#get_certificateofdeposit_on_company) | Retrieve your certificate of deposit. |
 | [PUT /Companies/{comapnyId}/ReleaseDeposit/](#put_releasedeposit_on_company) | Ask for your capital to be released. Let's make business now! |
 
-## <a id="post_companies"></a> Start a company creation project ##
+## <a id="post_company"></a> Start your iBanStart project. ##
 
 ```
 Method: POST 
-URL: /companies/
+URL: /Company/
 ```
-You want to create your company? That's great! Let's start your project now, the following data is required to retrieve an IBAN:
+You want to create your company ? That's great! Let's start your project now, the following data is required to retrieve an IBAN:
 
-On your future company ([Company Creation Data Object](../objects/objects.md#companyCreationData_object)):
+The [New Company Object](../objects/objects.md#newComapnyObject) that you will post will contain two important parts with required fields :
+
+Your future company ([New Company Creation Data Object](../objects/objects.md#newCompanyCreationData_object)) with required :
 * registeredName
 * registeredAddress (street, postCode, city, country)
 * legalForm
@@ -25,7 +27,7 @@ On your future company ([Company Creation Data Object](../objects/objects.md#com
 * sharesCapital (value, currency)
 * percentageRelease
 
-On all founders ([Shareholder Object](../objects/objects.md#shareholder_object)):
+All founders ([New Shareholder Object](../objects/objects.md#newShareholder_object)) with required :
 * type
 * isMainFounder 
 * sharesNumber
