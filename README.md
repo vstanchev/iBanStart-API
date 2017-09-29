@@ -1,4 +1,4 @@
-# iBanFirst-API-Company-Creation
+# iBanStart API Documentation
 Onboarding - Company Creation API
 
 ## GETTING STARTED WITH IBANFIRST REST COMPANY CREATION API ##
