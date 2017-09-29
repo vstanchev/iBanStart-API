@@ -439,14 +439,29 @@ Here is the list of status you may encounter while using the iBanFirst API.
 
 | Status | Description |
 |-------|-------------|
-| subscribing | Welcome to your company creation journey! A few document will be required to go to the next step and obtain you IBAN. |
-| awaitingFunds | When your project is ready and all required document has been filled and signed, we return you this status together with you IBAN. |
-| pendingKyc | When all funds has been collected and matched, you may ask for your certificate of deposit. This call triggered a KYC process on our side. |
-| pendingInformation | While we are making our KYC process and reviewing your projects. We may ask you some more documents or information. Your project will not move to the enxt step until you provide the required document or information. |
-| rejectedKyc | Something went wrong with your application, you are not compliant with our acceptance criterion. Please apply again or contact your account manager. |
-| awaitingIncorporation | When certificate of deposit is available, you can use it to incorporate your company with the appropriate local authorities. |
-| checkKbis | When certificate of deposit is available, you can use it to incorporate your company with the appropriate local authorities. |
-| finalized | Here we are, you company is created and you capital has just been released to the bank account you just opened. Congrats! |
+| Awaiting founders funds                       | Awaiting for all shareholder to fund the company account. |
+| Awaiting iBanFirst KYC                        | IbanFirst executes a KYC procedure on the company. |
+| Refused                                       | The company creation have been refused. |
+| Partner KYC/KYT                               | A partner executes a KYC/KYT procedure on the company |
+| Reject by partner                             | The KYC or KYT rejected by the partner. |
+| Deposit of funds                              | All funds have been sent by the shareholders. |
+| Certificate of deposit                        | The deposit certificate is available for download. |
+| Awaiting KBIS                                 | Awaiting the company KBIS. |
+| Check KBIS                                    | The KBIS is validated. |
+| Kbis refused                                  | The KBIS has been rejected. |
+| Certificate of release                        | The release certificate is created. |
+| Release of funds                              | The funds of the company are beeing released. |
+| Funds released                                | The funds of the company are released. |
+| KYC Suspend                                   | The KYC procedure is suspended. |
+| Closed                                        | The company creation is finalized. |
+| Waiting Generation of Certificate of deposit  | Awaiting deposit certificate generation. |
+| KYC partner compliance                        | The bank partner is running a compliance KYC procedure on the company. |
+| Deposit of capital to confirm                 | Awaiting the confirmation for the capital locking. |
+| Fund send to BP                               | The company funds are sent to the bank partner. |
+| BP Wait for Fund                              | The bank partner is waiting for the funds to arrive. |
+| Awaiting KYC MOManager                        | Awaiting middle office to execute the KYC procedure. |
+| Awaiting iBanFirst KYC Compliance             | Awaiting compiance office to execute the KYC procedure. |
+| Deposit of capital to confirm by MO           | Awaiting the capital deposit from the middle office. |
 
 #### <a id="document_type_list"></a> Document List ####
 
