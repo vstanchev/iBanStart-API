@@ -2,11 +2,11 @@
 
 | Route | Description |
 |-------|-------------|
-| [`POST /companies/`](#post_companies) | Start your company creation project. You get an IBAN in return. |
-| [`PUT /companies/{id}/document/{idDoc}`](#put_document) | Upload a document already declared in your project. |
-| [`GET /companies/{id}/certificateOfDeposit/`](#getDocuments_certificateDeposit) | Retrieve your certificate of deposit. |
-| [`PUT /companies/{id}/releaseDeposit/`](#put_companiesReleaseDeposit) | Ask for your capital to be released. Let's make business now! |
-| [`GET /companies/{id}/`](#get_companies) | Retrieve information and status on your company creation project |
+| [POST /Companies/](#post_company) | Start your iBanStart project. You get all data for your company creation in return. |
+| [GET /Companies/{comapnyId}/](#get_company) | Retrieve information and status about your company creation project |
+| [POST /Companies/{comapnyId}/Documents/{documentId}](#post_documents_on_company) | Upload a document already declared in your project. |
+| [GET /Companies/{comapnyId}/CertificateOfDeposit/](#get_certificateofdeposit_on_company) | Retrieve your certificate of deposit. |
+| [PUT /Companies/{comapnyId}/ReleaseDeposit/](#put_releasedeposit_on_company) | Ask for your capital to be released. Let's make business now! |
 
 ## <a id="post_companies"></a> Start a company creation project ##
 
@@ -134,7 +134,7 @@ POST /companies/
 | companies | [Companies Object](../objects/objects.md#companies_object) | Your up-to-date company creation project description |
 
 **Example:** 
-```js
+```json
 {
     "id": "NDgzOTU",
     "status" : "TBD",
