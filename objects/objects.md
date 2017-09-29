@@ -1,24 +1,27 @@
-# API Objects & Lists
+# API Objects & Lists #
 
-* [New Company Object](#newCompany_object)
-* [New Company Creation Data Object](#newCompanyCreationData_object)
-* [New Address Object](#newAddress_object)
-* [New Amount Object](#newAmount_object)
-* [New Shareholder Object](#newShareholder_object)
-* [New Registered Individual Object](#newRegisteredIndividual_object)
-* [New Document Object](#newDocument_object)
+## Objects to be sent ##
+[New Company Object](#newCompany_object)  
+[New Company Creation Data Object](#newCompanyCreationData_object)  
+[New Address Object](#newAddress_object)  
+[New Amount Object](#newAmount_object)  
+[New Shareholder Object](#newShareholder_object)  
+[New Registered Individual Object](#newRegisteredIndividual_object)  
+[New Document Object](#newDocument_object)  
 
-* [Companies Object](#companies_object)
-* [Company Creation Datas Object](#companyCreationDatas_object)
-* [Shareholder Object](#shareholder_object)
-* [Address Object](#address_object)
-* [Account Object](#account_object)
-* [Registered Individual Object](#registeredIndividual_object)
-* [Amount Object](#amount_object)
-* [Document Object](#document_object)
+## Object to be received ##
+[Companies Object](#companies_object)  
+[Company Creation Datas Object](#companyCreationDatas_object)  
+[Shareholder Object](#shareholder_object)  
+[Address Object](#address_object)  
+[Account Object](#account_object)  
+[Registered Individual Object](#registeredIndividual_object)  
+[Amount Object](#amount_object)  
+[Document Object](#document_object)  
 
-* [Status List](#status_list)
-* [Document List](#document_type_list)
+## Object types ##
+[Status List](#status_list)  
+[Document List](#document_type_list)  
 
 ## Details ##
 

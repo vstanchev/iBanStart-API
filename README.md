@@ -16,13 +16,20 @@ As our API is designed to be secured, we highly recommend you to consult our [Au
 
 As a part of the authentication process is based on time, your systems should be synchronised through [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) to ensure the capability of reaching our services. Our API engine has a tolerance of 2 seconds gap to ensure that all systems are capable to reach the API, whever the Time Server you uses. Using our API with non-synchronized system will result in various errors in response to your query. 
 
-#### Testing and troubleshooting ####
+### Testing and troubleshooting ###
 
 For testing requests and have a clear representation of what's returned by our API, you may want visit our [testing page](./services/Testing.md) and use the script provided. Easy to use, it will help you integrate the API more efficiently. 
 
 ## GETTING STARTED WITH IBANSTART API ##
 
-3 easy steps to get your company up!
+[Authentication](./services/Auth.md)  
+[Testing](./services/Testing.md)  
+[Endpoints](./services/API_compagny_creation.md)  
+[Webhooks](./services/Webhooks.md)  
+[Objects](./objects/objects.md)  
+[Formatting Conventions](./conventions/formattingConventions.md) 
+
+3 easy steps to get your company up !
 
 #### 1. Create your company project ####
 
