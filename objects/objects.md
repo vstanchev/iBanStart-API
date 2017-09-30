@@ -39,10 +39,10 @@ This object is meant to be posted when you create your iBanStart project. It con
 **Example:**
 ```json
 {
-	"companyCreationData": {/*NewCompanyCreationData*/},
+	"companyCreationData": {/**NewCompanyCreationData**/},
 	"shareholdingStructure": [
-		{/*NewShareholder*/},
-		{/*NewShareholder*/},
+		{/**NewShareholder**/},
+		{/**NewShareholder**/},
 		...
 	]
 }
