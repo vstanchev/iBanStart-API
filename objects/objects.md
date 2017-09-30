@@ -33,22 +33,22 @@ This object is meant to be posted when you create your iBanStart project. It con
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| companyCreationData 	| [New Company Creation Data Object](#newCompanyCreationDatas_object) | Required | Information, documents regarding the company you want to create. |
+| companyCreationData 	| [New Company Creation Data Object](#newCompanyCreationData_object) | Required | Information, documents regarding the company you want to create. |
 | shareholdingStructure | Array of [New Shareholder Object](#newShareholder_object) | Required | The regulatory list of shareholders, part of the Ultimate Beneficiary Owners that must be identified as part as our Compliance procedure on your company creation project. |
 
 **Example:**
 ```json
 {
-	"companyCreationData": {NewCompanyCreationData},
+	"companyCreationData": {/*NewCompanyCreationData*/},
 	"shareholdingStructure": [
-		{NewShareholder},
-		{NewShareholder},
+		{/*NewShareholder*/},
+		{/*NewShareholder*/},
 		...
 	]
 }
 ```
 
-#### <a id="companyCreationData_object"></a> Company Creation Data Object ####
+#### <a id="newCompanyCreationData_object"></a> Company Creation Data Object ####
 
 Specific information required for opening a iBanStart project.
 

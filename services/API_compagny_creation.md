@@ -45,7 +45,7 @@ By submitting your project, you consider that your project is complete and all d
 
 | Field | In | Type | Required | Description |
 |-------|------|------|----------|-------------|
-| company | Body | [Ne Company Object](../objects/objects.md#newCompany_object) | Required | Data regarding your company creation project |
+| company | Body | [New Company Object](../objects/objects.md#newCompany_object) | Required | Data regarding your company creation project |
 
 **Example of a Call containing all required information at this stage:**
 ```json
