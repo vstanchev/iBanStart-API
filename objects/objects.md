@@ -10,7 +10,7 @@
 [New Document Object](#newDocument_object)  
 
 ## Object to be received ##
-[Companies Object](#companies_object)  
+[Companies Object](#company_object)  
 [Company Creation Datas Object](#companyCreationDatas_object)  
 [Shareholder Object](#shareholder_object)  
 [Address Object](#address_object)  
@@ -39,10 +39,10 @@ This object is meant to be posted when you create your iBanStart project. It con
 **Example:**
 ```json
 {
-	"companyCreationData": {/**NewCompanyCreationData**/},
+	"companyCreationData": {NewCompanyCreationData},
 	"shareholdingStructure": [
-		{/**NewShareholder**/},
-		{/**NewShareholder**/},
+		{NewShareholder},
+		{NewShareholder},
 		...
 	]
 }
