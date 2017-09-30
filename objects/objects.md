@@ -10,7 +10,7 @@
 [New Document Object](#newDocument_object)  
 
 ## Object to be received ##
-[Companies Object](#company_object)  
+[Company Object](#company_object)  
 [Company Creation Datas Object](#companyCreationDatas_object)  
 [Shareholder Object](#shareholder_object)  
 [Address Object](#address_object)  
