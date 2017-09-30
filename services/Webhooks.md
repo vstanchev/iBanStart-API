@@ -4,7 +4,9 @@ The Webhooks provide realtime access to status update events of your iBanStart c
 
 Interacting with a third-party API like iBanStart can introduce a problem : Some events, like credit of accounts and many status event, are not the result of a direct API request.
 
-Webhooks solve these problems by letting you register a URL that we will notified anytime an event happens in your iBanStart company creation. When an event occurs - for example, when a successful payment is allocated on a company account - iBanStart creates an 'event'. 
+Webhooks solve these problems by letting you register a URL that we will notified anytime an event happens in your iBanStart company creation.
+
+When an event occurs - for example, when a successful payment is allocated on a company account - iBanStart creates an 'event'. 
 This event contains all information about your project status. iBanStart then send the whole description of the iBanStart project to any URLs in your account's webhooks settings via an HTTP POST request.
 
 Webhooks can be sent when :
@@ -39,3 +41,144 @@ If a webhook is not successfully received for any reason, iBanStart will continu
 * 1 hour for 1 time, then 
 * every 4 hours
 
+## Webhook body
+
+The webhook body contains two main parts :
+
+* The notification part where the notification data are included.
+* The content part, where the [Company Object](../services/API_compagny_creation.md#company_object) is included.
+
+**Fields:**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| notificationId | [ID](../conventions/formattingConventions.md#type_id) | The unique identifier of the notification. You can use it for non-replay or support purposes. |
+| firstSentDate | [DateTime](../conventions/formattingConventions.md#type_datetime) | The date and time for the first sending of the notification. |
+| lastSentDate | [DateTime](../conventions/formattingConventions.md#type_datetime) | The date and time for the last sending of the notification. |
+| notification | [Company Object](../services/API_compagny_creation.md#company_object) | The main content of the notification ; in this case, the company creation data. |
+
+**Example:** 
+```json
+{
+	"notificationId": "NTwD4N",
+	"firstSentDate": "2017-09-28 21:00:00",
+	"lastSentDate": "2017-09-28 22:00:00",
+	"notification": {
+	    "id": "NDgyMTc",
+	    "companyData": {
+	        "registredName": "Pied Pieper Paris",
+	        "registredAddress": {
+	            "street": "42 avenue de la grande arm\u00e9e",
+	            "postCode": "75000",
+	            "city": "Paris",
+	            "country": "FR",
+	            "state": null
+	        },
+	        "activityCode": "0119Z",
+	        "legalForm": "SAS",
+	        "capital": {
+	            "amount": "100000",
+	            "currency": "EUR"
+	        },
+	        "sharesNumber": "100",
+	        "documents": [],
+	        "documentsToUpload": [
+	            {
+	                "id": "NjQ4Mjk3",
+	                "typeName": "CompagnyStatusDraft"
+	            },
+	            {
+	                "id": "NjQ4Mjk4",
+	                "typeName": "ContractFounderCreasoc"
+	            }
+	        ]
+	    },
+	    "status": "AwaitingCofounders",
+	    "shareholdingStructures": [
+	        {
+	            "id": "ODY5Nzc",
+	            "type": "Individual",
+	            "isMainFounder": "0",
+	            "isPep": "0",
+	            "registeredName": {
+	                "civility": "M",
+	                "firstName": "Ruppe",
+	                "lastName": "Arnaud",
+	                "nationality": "FR",
+	                "birthDate": "1991-01-01",
+	                "birthCity": "Pessac",
+	                "birthCountry": "FR",
+	                "profession": "CEO of another company",
+	                "maritalStatus": "Single"
+	            },
+	            "registeredCompagny": null,
+	            "registeredIndividualCountry": null,
+	            "phone": "+33999999999",
+	            "email": "test@ibanfirst.com",
+	            "numberOfParts": "50",
+	            "regsiteredAddress": {
+	                "street": "42 Test Avenue",
+	                "postCode": "75008",
+	                "city": "Paris",
+	                "country": "FR",
+	                "state": null
+	            },
+	            "documents": [],
+	            "documentsToUpload": [
+	                {
+	                    "id": "NjQ4MzAx",
+	                    "typeName": "Identity"
+	                },
+	                {
+	                    "id": "NjQ4MzAy",
+	                    "typeName": "ProofOfAddress"
+	                }
+	            ]
+	        },
+	        {
+	            "id": "ODY5NzY",
+	            "type": "Individual",
+	            "isMainFounder": "1",
+	            "isPep": "0",
+	            "registeredName": {
+	                "civility": "M",
+	                "firstName": "Maxime",
+	                "lastName": "Champoux",
+	                "nationality": "FR",
+	                "birthDate": "1991-01-01",
+	                "birthCity": "Pessac",
+	                "birthCountry": "FR",
+	                "profession": "CEO of another company",
+	                "maritalStatus": "Single"
+	            },
+	            "registeredCompagny": null,
+	            "registeredIndividualCountry": null,
+	            "phone": "+33999999999",
+	            "email": "test@ibanfirst.com",
+	            "numberOfParts": "50",
+	            "regsiteredAddress": {
+	                "street": "4 NEW YORK PLAZA, FLOOR 15",
+	                "postCode": "75008",
+	                "city": "Paris",
+	                "country": "FR",
+	                "state": null
+	            },
+	            "documents": [],
+	            "documentsToUpload": [
+	                {
+	                    "id": "NjQ4Mjk5",
+	                    "typeName": "Identity"
+	                },
+	                {
+	                    "id": "NjQ4MzAw",
+	                    "typeName": "ProofOfAddress"
+	                }
+	            ]
+	        }
+	    ],
+	    "accounts": {
+	        "iban": "FR7620033000010000003178307"
+	    }
+	}	
+}
+```
