@@ -16,7 +16,7 @@ URL: /Companies/
 ```
 You want to create your company ? That's great! Let's start your project now, the following data is required to retrieve an IBAN:
 
-The [New Company Object](../objects/objects.md#newComapnyObject) that you will post will contain two important parts with required fields :
+The [New Company Object](../objects/objects.md#newCompany_object) that you will post will contain two important parts with required fields :
 
 Your future company ([New Company Creation Data Object](../objects/objects.md#newCompanyCreationData_object)) with required :
 * registeredName
