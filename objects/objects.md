@@ -1,9 +1,9 @@
 # API Objects & Lists #
 
 ## Objects to be sent ##
-[New Company Object](#newCompany_object)  
 [New Company Creation Data Object](#newCompanyCreationData_object)  
 [New Address Object](#newAddress_object)  
+[New Company Object](#newCompany_object)  
 [New Amount Object](#newAmount_object)  
 [New Shareholder Object](#newShareholder_object)  
 [New Registered Individual Object](#newRegisteredIndividual_object)  
@@ -133,7 +133,7 @@ This object describes the shareholder ownership and detailed information to send
 | sharesNumber | Integer | Required | The number of shares hold by this shareholder. |
 | isMainFounder | Boolean | Required | Indicates who is introducing the project among the project. It can be `true` or `false`. You can only have on Main Founder. |
 | isPep | Boolean | Required | You indicates if the shareholder is legally recognized as a [PEP](https://en.wikipedia.org/wiki/Politically_exposed_person). `true` or `false`. |
-| isFACTA | Boolean | Required | You indicates if the shareholder is FACTA dependent, for more information, following the [link](https://fr.wikipedia.org/wiki/Foreign_Account_Tax_Compliance_Act) |
+| isFACTA | Boolean | Required | You indicates if the shareholder is FACTA dependent, for more information, following the [link](https://fr.wikipedia.org/wiki/Foreign_Account_Tax_Compliance_Act). We don't accept FATCA founders so the inscription will be invalid if one of the founder isFATCA |
 | fiscalNumber | Number | Required | You must indicates a fiscal numver if the shareholder don't live in France | 
 | phone | [Phone](../conventions/formattingConventions.md#type_phone) | Required | Dedicated phone number of the shareholder. We may use this number to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have the right format. |
 | email | string (60) | Required | Dedicated email of the shareholder. We may use this email to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have an email format. |
@@ -170,7 +170,7 @@ Specific information when the shareholder is an individual.
 | nationality 	| String (2) 	| Required | The two-letters abbreviation for the country where the shareholder is registered if type is `individual`, following the [ISO-3166](http://fr.wikipedia.org/wiki/ISO_3166).|
 | birthDate 	| [Date](../conventions/formattingConventions.md#type_date) 	| Required | The birth date of the shareholder when type is `individual`. `YYYY-MM-DD` |
 | birthCity 	| String(35)	| Required | The indidual's birth city. Truncated after the first 35 characters. |
-| birthCountry 	| String (2)	| Required | The two-letters abbreviation for the country where the shareholder is born when type is `individual`, following the [ISO-3166](http://fr.wikipedia.org/wiki/ISO_3166). |
+| birthCountry 	| String (2)	| Required | The two-letters abbreviation for the country where the shareholder is born when type is `individual`, following the [ISO-3166](http://fr.wikipedia.org/wiki/ISO_3166). We will refuse company creation if the founder is borned in The United States of America, Iran or North Corea. |
 | profession 	| String (255)	| Required | The profession you have |
 | maritalStatus | String 		| Required | It can be `Single`, `Married`, `Divorced`, or `PACS` |
 
@@ -197,7 +197,7 @@ When a document is specified as part of a JSON body, it is encoded as an object 
 
 | Field | Type | Description |
 |-------|------|-------------|
-| documentType | String (60) | The type of the document to upload. The full list of document is accessible in the [Document List](#document_list)  |
+| documentType | String (60) | The type of the document to upload. The full list of document is accessible in the [Document List](#document_type_list). FYI, we reject all documents above 8Mo and we only accept the following extensions : png, jpeg, jp, gif, pdf, bmp, odt, doc, docx, dot, dotx, rtf, xps, odt. |
 | tag | String | A custom name for the file to upload. |
 | file | String | The binary content of the file, encoded with a base64 algorithm. |
 
@@ -251,7 +251,7 @@ Specific information required for opening a company creation project.
 | legalForm | String (5) | The legal form of the company to be created. It can be one of those 4 forms: `sasu`,`sarl`,`sas` and `eurl` |
 | capital | [Amount Object](#amount_object) | The amount in shareholding capital as mentionned in the articles of association. |
 | sharesNumber | Integer | The number of shares to be issued. |
-| documents | Array of [Document Object](#document_object) | The required documents for creating a company. Value for document object can take documentToComplete if your are posting a project and we will return documentCompleted when the document has been updated. |
+| documents | Array of [Document Object](#document_object) | The required documents for creating a company. µ for document object can take documentToComplete if your are posting a project and we will return documentCompleted when the document has been updated. |
 | documentsToUpload | Array of [Document Object](#document_object) | An Array of the document you need to upload with the [API Document Upload](#put_document). |
 | percentageRelease | Integer (3) | The percentage of shareholding capital to be released when the company is created. "20", "50" or "100". |
 
@@ -401,7 +401,7 @@ When an amount of currency is specified as part of a JSON body, it is encoded as
 
 | Field | Type | Description |
 |-------|------|-------------|
-| value  | Float | The quantity of the currency. |
+| value  | Float | The quantity of the currency. Must not have more than 2 decimals.|
 | currency | [Currency](../conventions/formattingConventions.md#type_currency) | The three-digit code specifying the currency related to the amount. |
 
 **Example:**
