@@ -18,6 +18,7 @@ As an additional convention, all responses from iBanFirst-REST contain a `"succe
 	* [Currency type](#type_currency)
 	* [Phone type](#type_phone)
 	* [QuotedDecimal type](#type_quoteddecimal)
+	* [Naf Code Type](#type_nafCode)
 * [Versioning](#versioning)
 
 ## <a id="errors_conventions"></a> Errors ##
@@ -112,11 +113,11 @@ The QuotedDecimal type describe an formatted floating number.
 
 | Type | Real type | format | description | example |
 |------|-----------|--------|-------------|---------|
-| QuotedDecimal | String | `^((\-){?})[0-9]{12}((\.[0-9]{1-7}){?})$` | A String representing a formatted floating number. | `"1.11723"` |
+| QuotedDecimal | String | `^((\-){?})[0-9]{12}((\.[0-9]{2})$` | A String representing a formatted floating number. | `"1.11"` |
 
 ### <a id="type_nafCode"></a> Naf Code Type ###
 
-The naf code type describe a formatted naf code.
+The naf code type describe a formatted naf code. Here is the [list of NAF CODE] http://blog.easyfichiers.com/wp-content/uploads/2014/08/Liste-code-naf-ape.pdf
 
 | Type | Real type | format | description | example |
 |------|-----------|--------|-------------|---------|
