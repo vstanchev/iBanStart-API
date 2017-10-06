@@ -29,7 +29,7 @@ For your testing requests and to see possible API call responses, we invite you 
 [Objects](./objects/objects.md)  
 [Formatting Conventions](./conventions/formattingConventions.md) 
 
-There are 3 steps to deliver a share capital certificate using the:
+There are 4 simple steps to open a share capital account, transfer funds, get your share capital certificate, and release funds using iBanStart API:
 
 #### 1. Create your company project ####
 
