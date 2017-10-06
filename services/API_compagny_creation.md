@@ -26,20 +26,25 @@ Your future company ([New Company Creation Data Object](../objects/objects.md#ne
 * sharesNumber
 * sharesCapital (value, currency)
 * percentageRelease
+* documents : "CompagnyStatusDraft" and "ContractFounderCreasoc" if you have more than one shareholder.
 
 All founders ([New Shareholder Object](../objects/objects.md#newShareholder_object)) with required :
 * type
 * isMainFounder 
 * sharesNumber
 * email
+* phone
 * isPep
+* isFATCA
 * registeredAddress (street, postCode, city, country)
+* Fiscal number is the country of the registeredAddress is not France
 * registeredIndividual (civility, firstName, lastName, nationality, birthDate, birthCity, birthCountry)
+* documents : "Identity" and "ProofOfAddress"
 
 By submitting your project, you consider that your project is complete and all documents properly signed.
 * We will return an IBAN that each shareholder can use to send their capital deposit. Status is `awaitingFunds` until all funds from shareholder has been correctly collected and matched.
-* We will proceed a due diligence review of your project, the shareholders and the presence of the right deposits. When we are fine, your project status will be updated automatically to another status that means that your certificate of deposit has been generated and is ready to be retrieved.
-* Next step will be to upload your kbis and ask for the release of the deposit.
+* We will proceed a due diligence review of your project, the shareholders and the presence of the right deposits. When we are fine, your project status will be updated to "deposit of capital to confirm" that means you will have to validate the deposit of founds. Then you can count up to 48 hours maximum to see your project status updated to "Awaiting KBIS" which means that your certificate of deposit has been generated and is ready to be retrieved.
+* Next step will be to upload your RCS number, kbis, final Status of the company and information to open iBanFirst Account and release the deposit. 
 
 **Parameters:**
 
@@ -588,10 +593,9 @@ URL: /companies/{id}/releaseDeposit/
 Congrats! At this stage, basically your company should be registered. You may use this service to automatically convert your company creation account into a Pro account. Otherwise, just send us the IBAN of the account you want to release your capital (it must be an account at your company's name). 
 
 The following data will be required:
-* accountNumber
-* registrationNumber
+* RegistrationNumber
 * registrationDate
-* Documents (articleOfAssociationSigned and proofOfIncorporation)
+* Documents (articleOfAssociationSigned and KBIS and iBanFirst opening account contract)
 
 Our team will need a quick analysis of the documents you sent before you can enjoy our Pro services. The liberation of your funds must follow in the next 48 hours.
 
@@ -602,7 +606,6 @@ Our team will need a quick analysis of the documents you sent before you can enj
 | id | URL | [ID](../conventions/formattingConventions.md#type_id) | Required | The internal reference for this company creation project. |
 | registrationNumber | Body | String (20) | Required | The registration number of the company created. |
 | registrationDate | Body | [Date](../conventions/formattingConventions.md#type_date) | Required | The registration date of the company created. |
-| accountNumber | Body | String (20) | Optional | You may use this field if you don't want to release your capital in your iBanFirst Pro account. |
 | documents | Body | Array of [New Document Object](../conventions/formattingConventions.md#newDocument_object) | Required | The type of document to reference with your company creation project |
 
 **Example:**
