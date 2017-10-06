@@ -14,7 +14,7 @@ Webhooks can be sent when :
 * **Awaiting founders funds:** iBanStart is waiting for all shareholders to fund the company creation account.
 * **Refused:** Company creation is refused.
 * **Certificate of deposit:** The deposit certificate is available for download.
-* **Awaiting KBIS:** Awaiting upload of the company KBIS.
+* **Awaiting KBIS:** Awaiting upload of the company KBIS, final company status document signed, Registrationnumber and iBanFirst opening account contract
 * **KYC Suspend:** Mandatory documents are rejected and needs to be reuploaded.
 * **Deposit of capital to confirm:** Awaiting confirmation of funds definitive locking.
 * **KBIS Supsend:** The previously uploaded KBIS is rejected and needs to be reuploaded.
