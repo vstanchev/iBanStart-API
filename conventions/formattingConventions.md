@@ -1,6 +1,6 @@
 # Formatting Conventions #  
 
-The iBanFirst Company Creation API conforms to the following general behavior for [RESTful API](http://en.wikipedia.org/wiki/Representational_state_transfer):
+The iBanStart API conforms to the following general behavior for [RESTful APIs](http://en.wikipedia.org/wiki/Representational_state_transfer):
 
 * You make [HTTPS](http://en.wikipedia.org/wiki/HTTPS) requests to the API endpoint, indicating the desired resources within the URL itself. (The public server, for the sake of security, only accepts [HTTPS](http://en.wikipedia.org/wiki/HTTPS) requests.)
 * The [HTTP method](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods) identifies what you are trying to do.  Generally, HTTP `GET` requests are used to retrieve information, while HTTP `POST` requests are used to make changes or submit information.
@@ -8,7 +8,7 @@ The iBanFirst Company Creation API conforms to the following general behavior fo
   * This means that you must set `Content-Type: application/json` in the headers when sending POST requests with a body.
 * Upon successful completion, the server returns an [HTTP status code](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) of 200 OK, and a `Content-Type` value of `application/json`.  The body of the response will be a JSON-formatted object containing the information returned by the endpoint.
 
-As an additional convention, all responses from iBanFirst-REST contain a `"success"` field with a boolean value indicating whether or not the success
+As an additional convention, all responses from iBanStart-REST contain a `"success"` field with a boolean value indicating whether or not the success
 
 * [Errors](#errors_conventions)
 * [Normalized Types](#normalized_conventions)
@@ -23,7 +23,7 @@ As an additional convention, all responses from iBanFirst-REST contain a `"succe
 
 ## <a id="errors_conventions"></a> Errors ##
 
-iBanFirst uses conventional HTTP response codes to indicate success or failure of an API request. The body of the response contains more detailed information on the cause of the problem.
+iBanStart uses conventional HTTP response codes to indicate success or failure of an API request. The body of the response contains more detailed information on the cause of the problem.
 
 In general, the HTTP status code is indicative of where the problem occurred:
 
@@ -34,7 +34,7 @@ In general, the HTTP status code is indicative of where the problem occurred:
     * `403  Forbidden` occurs if there is a problem with your authentication on the server.
     * `404 Not Found` occurs if the path specified does not exist, or does not support that method (for example, trying to POST to a URL that only serves GET requests)
 * Codes in the 500-599 range indicate that the server experienced a problem. This could be due to a network outage or a bug in the software somewhere. For example:
-    * `500 Internal Server Error` occurs when the server does not catch an error. This is always a bug. If you can reproduce the error, file it at [our bug tracker in your iBanFirst platform](https://iBanFirstplatform.com/login).
+    * `500 Internal Server Error` occurs when the server does not catch an error. This is always a bug. 
     * `502 Bad Gateway` occurs if iBanFirst-REST could not contact its `iBanFirst` server at all.
     * `504 Gateway Timeout` occurs if the `iBanFirst` server took too long to respond to the iBanFirst-REST server.
 
@@ -56,7 +56,7 @@ When possible, the server provides a JSON response body with more information ab
 }
 ```
 
-Our API libraries can raise exceptions for many reasons, such as failed trade, invalid parameters, authentications errors, and network unavailability. We recommend always trying to gracefully handle exceptions from our API.
+Our API libraries can raise exceptions for many reasons, such as invalid parameters, authentications errors, and network unavailability. We recommend always trying to gracefully handle exceptions from our API.
 
 You can see a full list of errors and error details <a href="http://wonderfullmalus.fr/RestError/all/" target="_blank">here</a>.
 
