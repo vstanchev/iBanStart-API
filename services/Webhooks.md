@@ -18,7 +18,7 @@ To enable webhooks notification, you must send all relevant data to our institut
 
 You must provide an available URL able to receive POST HTTP or HTTPS requests with [application/json mime-type](https://en.wikipedia.org/wiki/JSON#MIME_type) support.
 
-## 2. Receiving Webhook Events ##
+## 2. Receiving webhook events ##
 
 Webhook data is sent as JSON in the POST request body. The full company creation details are included and can be used directly, after parsing the JSON into a [Company Object](../services/API_compagny_creation.md#company_object).
 
@@ -32,7 +32,7 @@ If a webhook is not successfully received for any reason, iBanStart will continu
 * 10 minutes for 1 time, then 
 * 30 minutes for 1 time, then 
 * 1 hour for 1 time, then 
-* every 4 hours
+* Every 4 hours
 
 ## Webhook body
 
