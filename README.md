@@ -45,8 +45,6 @@ The service will return an IBAN corresponding to the account where share capital
 
 You can use the following service to check the funds that have been received: [GET /Companies/{companyId}/](./services/API_compagny_creation.md#get_company).
 
-Once all funds have been received, you will need to call the following service: xxx.
-
 This will start the review of your application. This proces can take up to 48 hours. The result is the generation of your share capital certificate.
 
 #### 3. Download your share capital certificate ####
