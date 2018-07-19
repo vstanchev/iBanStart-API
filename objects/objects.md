@@ -110,7 +110,7 @@ When an amount of currency is specified as part of a JSON body, it is encoded as
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| value  | Float | Required | The quantity of the currency. |
+| amount  | Float | Required | The quantity of the currency. |
 | currency | [Currency](../conventions/formattingConventions.md#type_currency) | Required | The three-digit code specifying the currency related to the amount. |
 
 **Example:**
@@ -134,7 +134,7 @@ This object describes the shareholder ownership and detailed information to send
 | isMainFounder | Boolean | Required | Indicates who is introducing the project among the project. It can be `true` or `false`. You can only have on Main Founder. |
 | isPep | Boolean | Required | You indicates if the shareholder is legally recognized as a [PEP](https://en.wikipedia.org/wiki/Politically_exposed_person). `true` or `false`. |
 | isFACTA | Boolean | Required | You indicates if the shareholder is FACTA dependent, for more information, following the [link](https://fr.wikipedia.org/wiki/Foreign_Account_Tax_Compliance_Act). We don't accept FATCA founders so the inscription will be invalid if one of the founder isFATCA |
-| fiscalNumber | Number | Required | You must indicates a fiscal numver if the shareholder don't live in France | 
+| fiscalNumber | String | Optional | You must indicates a fiscal numver if the shareholder don't live in France | 
 | phone | [Phone](../conventions/formattingConventions.md#type_phone) | Required | Dedicated phone number of the shareholder. We may use this number to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have the right format. |
 | email | string (60) | Required | Dedicated email of the shareholder. We may use this email to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have an email format. |
 | registeredAddress | [New Address Object](#newAddress_object) | Required | The registered address of the shareholder. |
