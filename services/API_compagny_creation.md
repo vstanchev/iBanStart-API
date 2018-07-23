@@ -35,7 +35,7 @@ All founders ([New Shareholder Object](../objects/objects.md#newShareholder_obje
 * email
 * phone
 * isPep
-* isFATCA
+* isFACTA
 * registeredAddress (street, postCode, city, country)
 * Fiscal number is the country of the registeredAddress is not France
 * registeredIndividual (civility, firstName, lastName, nationality, birthDate, birthCity, birthCountry)
