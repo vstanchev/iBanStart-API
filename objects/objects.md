@@ -110,7 +110,7 @@ When an amount of currency is specified as part of a JSON body, it is encoded as
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| amount  | Float | Required | The quantity of the currency. |
+| value  | Float | Required | The quantity of the currency. |
 | currency | [Currency](../conventions/formattingConventions.md#type_currency) | Required | The three-digit code specifying the currency related to the amount. |
 
 **Example:**
@@ -220,8 +220,8 @@ The main object of a iBanStart project. Status is automatically updated when the
 |-------|------|-------------|
 | id | [ID](../conventions/formattingConventions.md#type_id) | The unique identifier related to the company to be created. |
 | status | String (60) | The status of your company creation project. The full list of status is accessible in the [Status List](#status_list)  |
-| companyCreationData | [Company Creation Data Object](#companyCreationData_object) | Information, documents regarding the company you want to create. |
-| shareholdingStructure | Array<[Shareholder Object](#shareholder_object)> | The regulatory list of shareholders, part of the Ultimate Beneficiary Owners that must be identified as part as our Compliance procedure on your company creation project. |
+| companyData | [Company Creation Data Object](#companyCreationData_object) | Information, documents regarding the company you want to create. |
+| shareholdingStructures | Array<[Shareholder Object](#shareholder_object)> | The regulatory list of shareholders, part of the Ultimate Beneficiary Owners that must be identified as part as our Compliance procedure on your company creation project. |
 | account | [Account Object](#account_object) | The IBAN account that has been opened for the purpose of your company creation project. |
 
 **Example:**
@@ -245,8 +245,8 @@ Specific information required for opening a company creation project.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| registeredName | String (100) | The legal name of the company to be created. |
-| registeredAddress | [Address Object](#address_object) | The registered address of the company to be created. |
+| registredName | String (100) | The legal name of the company to be created. |
+| registredAddress | [Address Object](#address_object) | The registered address of the company to be created. |
 | activityCode | [NAF ID](../conventions/formattingConventions.md#type_nafCode) | The code identifying the type of business of the company to be created. |
 | legalForm | String (5) | The legal form of the company to be created. It can be one of those 4 forms: `sasu`,`sarl`,`sas` and `eurl` |
 | capital | [Amount Object](#amount_object) | The amount in shareholding capital as mentionned in the articles of association. |
@@ -285,14 +285,13 @@ This object shows the shareholder ownership and detailed information.
 | type | String (10) | It can be only `Individual`. |
 | isMainFounder | Boolean | Indicates who is introducing the project among the project. It can be `true` or `false`. You can only have on Main Founder. |
 | isPep | Boolean | You indicates if the shareholder is legally recognized as a [PEP](https://en.wikipedia.org/wiki/Politically_exposed_person). `true` or `false`. |
-| isFACTA | Boolean | You indicates if the shareholder is FACTA dependent, for more information, following the [link](https://fr.wikipedia.org/wiki/Foreign_Account_Tax_Compliance_Act) |
-| fiscalNumber | Number | You must indicates a fiscal numver if the shareholder don't live in France | 
-| shares | Integer | The number of shares that belong to the shareholder. |
+| numberOfParts | Integer | The number of shares that belong to the shareholder. |
 | email | string (60) | Dedicated email of the shareholder. We may use this email to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have an email format. |
-| registeredAddress | [Address Object](#address_object) | The registered address of the shareholder. |
-| registeredIndividualName | [Registered Individual Object](#registeredIndividual_object) | The registered information of the shareholder when type is `individual`. |
+| regsiteredAddress | [Address Object](#address_object) | The registered address of the shareholder. |
+| registeredName | [Registered Individual Object](#registeredIndividual_object) | The registered information of the shareholder when type is `individual`. |
 | documents | Array<[Document Object](#document_object)> | The required documents related to this shareholder. |
-| phoneNumber | [Phone](../conventions/formattingConventions.md#type_phone) | Dedicated phone number of the shareholder. We may use this number to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have the right format. |
+| documentsToUpload | Array<[Document Object](#document_object)> | The required documents related to this shareholder. |
+| phone | [Phone](../conventions/formattingConventions.md#type_phone) | Dedicated phone number of the shareholder. We may use this number to send personal information about the company in project. We are also checking the format of the field and return an error if we don't have the right format. |
 
 
 **Example:**
