@@ -398,7 +398,7 @@ You can use this API service to retrieve status and information on your company 
 ### <a id="put_document"></a> Upload a document already declared in your project. ###
 ```
 Method: POST
-URL: /companies/{companyId}/document/{documentId}/
+URL: /companies/{companyId}/documents/{documentId}/
 ```
 You have already declared documents that you must submit in you company creation project. In return we have sent you and ID for each of those documents.
 You can upload those document one by one using this service and must use the ID we have sent you. This service allow you to upload document for the company creation project and 
